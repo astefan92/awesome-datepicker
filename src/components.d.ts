@@ -13,9 +13,11 @@ import '@stencil/core';
 export namespace Components {
 
   interface AwDatepicker {
+    'maxYear': number;
     'minYear': number;
   }
   interface AwDatepickerAttributes extends StencilHTMLAttributes {
+    'maxYear'?: number;
     'minYear'?: number;
   }
 }
