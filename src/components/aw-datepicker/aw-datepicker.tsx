@@ -1,6 +1,7 @@
 import { Component, Prop, State } from '@stencil/core';
 import { Days } from '../models/days.enum';
 import { Months } from '../models/months.enum';
+import { Calendar } from '../models/calendar.model';
 
 import moment from 'moment';
 
@@ -14,7 +15,7 @@ export class AwDatepickerComponent {
   @Prop() minYear: number = 1919;
   @Prop() maxYear: number = 2119;
 
-  @State() calendar: any = {
+  @State() calendar: Calendar = {
     currentDate: new Date(),
     selectedDate: new Date(),
     currentYear: new Date().getFullYear(),
