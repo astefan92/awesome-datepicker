@@ -41,13 +41,13 @@ export class AwDatepickerComponent {
   }
 
   getDaysInMonthPerWeek(year: number, month: number) {
-    const daysInMonthPerWeek = this.getDaysInMonth(year, month).reduce((previousDate, currentDate) => {
+    const daysInMonthPerWeek = this.getDaysInMonth(year, month).reduce((previousDates, currentDate) => {
       const yearWeek = year + '-' + moment(currentDate).week();
-      if (typeof previousDate[yearWeek] === 'undefined') {
-        previousDate[yearWeek] = [];
+      if (typeof previousDates[yearWeek] === 'undefined') {
+        previousDates[yearWeek] = [];
       }
-      previousDate[yearWeek].push(currentDate);
-      return previousDate;
+      previousDates[yearWeek].push(currentDate);
+      return previousDates;
     }, {});
     return daysInMonthPerWeek;
   }
